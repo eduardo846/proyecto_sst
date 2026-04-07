@@ -15,6 +15,7 @@ app.use("/planes", require("./modules/planes/plan.routes"));
 app.use("/examenes", require("./modules/examenes/examen.routes"));
 app.use("/documentos", require("./modules/documentos/documento.routes"));
 app.use("/notificaciones", require("./modules/notificaciones/notificacion.routes"));
+app.use("/empresas", require("./modules/empresas/empresa.routes"));
 
 
 module.exports = app;
