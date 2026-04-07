@@ -5,10 +5,22 @@ exports.getAll = async (req, res) => {
   res.json(data);
 };
 
+/*
 exports.create = async (req, res) => {
   const data = await service.create(req.body, req.user.empresaId);
   res.json(data);
 };
+*/
+exports.create = async (req, res, next) => {
+  try {
+    const data = await service.create(req.body, req.user.empresaId);
+    res.status(201).json(data);
+  } catch (error) {
+    next(error);
+  }
+};
+
+
 exports.getById = async (req, res, next) => {
   try {
     const { id } = req.params;
